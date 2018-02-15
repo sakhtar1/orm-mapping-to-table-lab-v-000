@@ -22,7 +22,10 @@ class Student
 
   def Student.drop_table
 
-    drop_table :students
+    sql = <<-SQL
+      DROP table students
+    SQL
+
     DB[:conn].execute(sql)
 
   end
