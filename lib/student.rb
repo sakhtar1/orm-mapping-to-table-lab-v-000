@@ -1,5 +1,6 @@
 class Student
-
+  # Remember, you can access your database connection anywhere in this class
+  #  with DB[:conn]
   attr_accessor :name, :grade
   attr_reader :id
 
@@ -30,12 +31,11 @@ class Student
   def save
 
     sql = <<-SQL
-        INSERT INTO students (name, grade) 
+        INSERT INTO students (name, grade)
         VALUES (?, ?)
       SQL
-   
+
       DB[:conn].execute(sql, self.name, self.grade)
-  # Remember, you can access your database connection anywhere in this class
-  #  with DB[:conn]
+  end
 
 end
