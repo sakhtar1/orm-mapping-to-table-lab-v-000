@@ -23,7 +23,7 @@ class Student
   def Student.drop_table
 
     drop_table :students
-    DB[:conn].execute(sql
+    DB[:conn].execute(sql)
 
   end
   # Remember, you can access your database connection anywhere in this class
